@@ -1,0 +1,22 @@
+<resources>
+    <string name="app_name">Zapret2UI</string>
+    <string name="app_subtitle">Обход блокировок в один клик — теперь на Android</string>
+    <string name="action_enable">Включить обход</string>
+    <string name="action_disable">Выключить обход</string>
+    <string name="status_stopped">Остановлен</string>
+    <string name="status_starting">Запуск…</string>
+    <string name="status_running">Работает</string>
+    <string name="status_stopping">Остановка…</string>
+    <string name="notif_title">Zapret2UI работает</string>
+    <string name="notif_text">Обход DPI активен — трафик защищён</string>
+    <string name="notif_channel">Защита соединения</string>
+    <string name="vpn_permission_title">Разрешение VPN</string>
+    <string name="vpn_permission_text">Для обхода блокировок Android требует создать VPN-подключение. Это локальный TUN — трафик не уходит на чужой сервер, desync делается на устройстве.</string>
+    <string name="tab_home">Главная</string>
+    <string name="tab_strategies">Стратегии</string>
+    <string name="tab_hostlists">Хостлисты</string>
+    <string name="tab_diagnostics">Диагностика</string>
+    <string name="tab_log">Журнал</string>
+    <string name="tab_telegram">Telegram</string>
+    <string name="tab_settings">Настройки</string>
+</resources>

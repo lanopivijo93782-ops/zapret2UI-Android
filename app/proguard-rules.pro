@@ -1,0 +1,5 @@
+-keep class com.asterlike.zapret2ui.** { *; }
+-keep class androidx.compose.** { *; }
+-dontwarn kotlinx.serialization.**
+-keepattributes *Annotation*, InnerClasses
+-dontnote kotlinx.serialization.AnnotationsKt
