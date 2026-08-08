@@ -104,9 +104,13 @@ class TgProxyCore(
             val relay1 = async { relay(input, upstream.getOutputStream(), "c→s") }
             val relay2 = async { relay(upstream.getInputStream(), output, "s→c") }
             // Ждём закрытия любого направления
-            select@ {
-                relay1.onAwait { }
-                relay2.onAwait { }
+            try {
+                relay1.await()
+                relay2.await()
+            } catch (_: Exception) {
+                // one side closed, cancel the other
+                try { relay1.cancel() } catch (_: Exception) {}
+                try { relay2.cancel() } catch (_: Exception) {}
             }
             val elapsed = (System.currentTimeMillis() - start) / 1000.0
             log("#$id DC$dc: закрыто через ${"%.1f".format(elapsed)} с — Telegram закрыл канал")

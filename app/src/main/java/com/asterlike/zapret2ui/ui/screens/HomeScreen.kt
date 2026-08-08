@@ -14,9 +14,9 @@ import com.asterlike.zapret2ui.engine.EngineService
 
 @Composable
 fun HomeScreen(vm: MainViewModel) {
-    val state by vm.engineState.collectAsStateWithLifecycleCompat()
-    val preset by vm.selectedPreset.collectAsStateWithLifecycleCompat()
-    val settings by vm.settings.collectAsStateWithLifecycleCompat()
+    val state by vm.engineState.collectAsState()
+    val preset by vm.selectedPreset.collectAsState()
+    val settings by vm.settings.collectAsState()
     val isRunning = state == EngineService.EngineState.RUNNING
     val isStarting = state == EngineService.EngineState.STARTING
 
@@ -87,4 +87,4 @@ fun HomeScreen(vm: MainViewModel) {
         }
     }
 }
-private fun <T> kotlinx.coroutines.flow.StateFlow<T>.collectAsStateWithLifecycleCompat(): androidx.compose.runtime.State<T> = collectAsState(initial = value)
+
